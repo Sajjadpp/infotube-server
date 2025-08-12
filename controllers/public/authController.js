@@ -30,8 +30,8 @@ const googleLogin = async(req, res)=>{
 
             res.cookie('INFO_REFRESH_TOKEN', refreshToken, {
                 httpOnly: true,         // 🔐 Prevents client-side JS from accessing the cookie
-                secure: false,          // 🔒 Set to `true` in production (with HTTPS)
-                sameSite: 'lax',        // 💡 Use 'none' if frontend and backend are on different domains
+                secure: true,          // 🔒 Set to `true` in production (with HTTPS)
+                sameSite: 'None',        // 💡 Use 'none' if frontend and backend are on different domains
                 maxAge: 1000 * 60 * 60 * 24, // 1 day
                 path: '/'   // 👈 Optional but helps scope the cookie
             });
