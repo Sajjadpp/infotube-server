@@ -53,8 +53,8 @@ const googleLogin = async(req, res)=>{
             let AccessToken = await jwt.generateAccessToken({user: newUser._id})
             res.cookie('INFO_REFRESH_TOKEN', refreshToken, {
                 httpOnly: true,         
-                secure: false,          
-                sameSite: 'lax',        
+                secure: true,          
+                sameSite: 'None',        
                 maxAge: 1000 * 60 * 60 * 24, // 1 day
                 path: '/'   // 👈 Optional but helps scope the cookie
             });
