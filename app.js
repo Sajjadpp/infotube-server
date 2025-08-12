@@ -23,7 +23,7 @@ initMediasoup();    // Mediasoup WebRTC setup
 initSocket(server); // Your existing Socket.IO setup
 
 // Middleware
-app.use(cors({ origin: 'https://intotube-client.vercel.app', credentials: true }));
+app.use(cors({ origin: process.env.CORS_PATH, credentials: true }));
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
