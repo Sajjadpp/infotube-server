@@ -61,7 +61,7 @@ function initSocket(server) {
       // Get the streamer's socket instance
       const streamerSocket = Array.from(io.sockets.sockets.values())
         .find(s => s.userId === to.toString());
-      
+        console.log("streamer socket: ", streamerSocket)
       if (streamerSocket) {
         // Emit only to the streamer, not to all sockets in the room
         streamerSocket.emit('viewer-join', from);
