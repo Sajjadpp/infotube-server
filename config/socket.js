@@ -49,8 +49,7 @@ function initSocket(server) {
 
     // gettig the signal
     socket.on("signal", ({ to:targetId, from, ...rest }) => {
-      console.log('signal from user ', from, ' to ', targetId,' on ', ...rest.type)
-      console.log(targetId,"to")
+      console.log('signal from user ', from, ' to ', targetId,' on ', rest.type)
       io.to(targetId).emit("signal", { from, ...rest });
        
     });
